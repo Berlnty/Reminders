@@ -54,8 +54,8 @@ public class ListAdapter extends ArrayAdapter<Reminder> {
         TextView titleText = (TextView) rowView.findViewById(R.id.textView);
         TextView important= (TextView) rowView.findViewById(R.id.button);
 
-        titleText.setText("   "+resources.get(position).text);
-       if(resources.get(position).imp) important.setBackgroundColor(Color.parseColor("#ffff4444"));
+        titleText.setText("   "+resources.get(position).getText());
+       if(resources.get(position).getimp()>0) important.setBackgroundColor(Color.parseColor("#ffff4444"));
 
         return rowView;
 

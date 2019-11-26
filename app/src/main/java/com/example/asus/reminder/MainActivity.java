@@ -30,10 +30,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reminders);
         list = (ListView) findViewById(R.id.listview);
-        reminders.add(new Reminder("Reminder 1",false));
-        reminders.add(new Reminder("reminder2",true));
-        reminders.add(new Reminder("reminder3",false));
-        reminders.add(new Reminder("reminder4",false));
+        reminders.add(new Reminder("Reminder 1",0,1));
+        reminders.add(new Reminder("reminder2",1,2));
+        reminders.add(new Reminder("reminder3",0,3));
+        reminders.add(new Reminder("reminder4",0,4));
 
 
        adapter = new ListAdapter(this, reminders);
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent  = new Intent(getApplicationContext(), Dialog.class);
 
         intent.putExtra("title","Add");
-        Reminder temp= new Reminder("",false);
+        Reminder temp= new Reminder("",0,5);
         intent.putExtra("Reminder",  temp);
         startActivityForResult(intent,1);
 
